@@ -32,4 +32,13 @@ defmodule Cards do
       {:error, _reason} -> "That file does not exist"
     end
   end
+
+  def create_hand(hand_size) do
+    # The pipe operator (|>) passes the result of each function as the first argument to the next.
+    # Cards.deal/2 expects two parameters (deck, hand_size), but the deck is provided by the pipe,
+    # so we only pass hand_size as the second argument.
+    Cards.create_deck()
+    |> Cards.shuffle()
+    |> Cards.deal(hand_size)
+  end
 end
