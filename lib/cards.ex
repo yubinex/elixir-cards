@@ -31,9 +31,9 @@ defmodule Cards do
 
   ## Examples
       iex> deck = Cards.create_deck()
-      iex> {hand, deck} = Cards.deal(deck, 1)
+      iex> {hand, _deck} = Cards.deal(deck, 1)
       iex> hand
-      ["Ace of Spaces"]
+      ["Ace of Spades"]
   """
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
